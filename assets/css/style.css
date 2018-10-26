@@ -1,9 +1,6 @@
-
-
-
 body{
-	background-image: url(../images/space_background.jpg);
-	background-size: cover;
+	background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+	/*background-size: cover;*/
 }
 
 .jumbotron{
@@ -14,31 +11,52 @@ body{
 }
 .btn-outline-warning {
 	font-family: 'Black Ops One', cursive;
-    color: #ffe81f;
-    border-color: #ffe81f;
-    /*font-weight: bold;*/
+	color: #ffe81f;
+	border-color: #ffe81f;
+	/*font-weight: bold;*/
 }
 .btn-outline-warning:hover {
 	font-family: 'Black Ops One', cursive;
 	color: #000;
-    border-color: #ffe81f;
-    background-color: #ffe81f;
-    /*font-weight: bold;*/
+	border-color: #ffe81f;
+	background-color: #ffe81f;
+	/*font-weight: bold;*/
 }
 
 .btn-outline-warning:not(:disabled):not(.disabled):active{
-	 border-color: #ffe81f;
-    background-color: #ffe81f;
+	border-color: #ffe81f;
+	background-color: #ffe81f;
 }
 #logo{
 	width:312px;
 }
 
+.backgrd{
+	background-image: url(../images/fighting-area.jpg);
+	background-size: cover;
+	width: 800px;
+	height: 350px;
+	border: 4px solid #ffe81f;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-size: 25px;
+}
 
+.enemySide{
+	text-align: right;
+}
+div#player-fight-area {
+	margin: 70px;
+	padding-left: 145px;
+}
+
+div#enemy-fight-area {
+	margin: 70px;
+	padding-right: 145px;
+}
 
 #firstSection{
- 	border-bottom: 5px solid #ffe81f;
- 	padding-bottom: 25px;
+	border-bottom: 5px solid #ffe81f;
+	padding-bottom: 25px;
 
 }
 
@@ -46,15 +64,14 @@ body{
 	font-family: 'Black Ops One', cursive;
 	color:#ffe81f;
 	margin:12px auto;
+	font-size: 25px;
+
 }
 
 div.fightingArea img{
-	border: 4px solid #ffe81f;
-	width: 100%;
+	width: 740px;
 	max-width: 800px;
-	color: #ffe81f ;
-	clear: both;
-	position: relative;
+	color: #ffe81f ;s
 	height: 360px;
 	margin-bottom: 10px;
 }
@@ -71,82 +88,23 @@ div.fightingArea img{
 
 
 #rey, #luke, #maul, #vader {
-	position: relative;
-	width: 150px;
+	/*position: relative;*/
+	width: 180px;
 	height: 150px;
 }
 
-#player-fight-area{
-	position: absolute;
-	left:550px;
-	top: 580px;
-	width: 150px;
-	height: 150px;
-	margin: 0px;
-}
-
-#enemy-fight-area{
-	position: absolute; 
-	right: 581px;
-	top: 580px;
-	width: 150px;
-	height: 150px;
-	margin: 0px;
-}
 
 .flip {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
 }
 
-#player-name{
+#player-name, #enemy-name, #player-hp, #enemy-hp, #player-total-hp, #enemy-total-hp {
 	font-family: 'Black Ops One', cursive;
 	color:#ffe81f;
-	position: absolute;
-	left:440px;
-	top: 430px;
 }
 
-#enemy-name{
-	font-family: 'Black Ops One', cursive;
-	color:#ffe81f;
-	position: absolute;
-	right: 440px;
-	top: 430px;
-}
-
-#player-hp {
-	font-family: 'Black Ops One', cursive;
-	color:#ffe81f;
-	position: absolute;
-	left:440px;
-	top: 460px;
-}
-#enemy-hp {
-	font-family: 'Black Ops One', cursive;
-	color:#ffe81f;
-	position: absolute;
-	right: 440px;
-	top: 460px;
-}
-
-#player-total-hp {
-	font-family: 'Black Ops One', cursive;
-	color:#ffe81f;
-	position: absolute;
-	left:440px;
-	top: 490px;
-
-}
-
-#enemy-total-hp {
-	font-family: 'Black Ops One', cursive;
-	color:#ffe81f;
-	position: absolute;
-	right: 440px;
-	top: 490px;
-}
