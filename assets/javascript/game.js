@@ -132,7 +132,6 @@ console.log("we are live!!!")
 		$("#rey").on("click", function() {
 			if (playerTwoSelected === false && rey.isPlayerOne === false){
 			console.log("rey is second player");
-			
 			$("#rey").appendTo("#enemy-fight-area");
 			$("#enemy-name").text(rey.name);
 			$("#enemy-hp").text("Health Points");
@@ -211,8 +210,9 @@ console.log("we are live!!!")
 				if (enemy.healthPoints <= 0){
 				enemiesRemaining--;
 				console.log("enemies remaining is " + enemiesRemaining);
+				statusCheck();
 				}else {
-					counterAttack();
+				counterAttack();
 					// console.log("rey's HP is " + player.healthPoints);
 				}
 				
@@ -232,7 +232,24 @@ console.log("we are live!!!")
 		$("#player-total-hp").text(player.healthPoints);
 		console.log("player HP is " + player.healthPoints);
 		if (player.healthPoints <= 0){
-			console.log("you lose");	
+			console.log("you lose");
+			statusCheck();	
+		}
+	}
+
+	function statusCheck(){
+		if (enemiesRemaining === 0){
+			console.log("you win!");
+		}
+		else if (player.healthPoints <= 0 || enemy.healthPoints <=0){
+
+			console.log(enemiesRemaining);
+			playerTwoSelected = false;
+			$("#enemy-fight-area").empty();
+			$("#enemy-name").text("");
+			$("#enemy-total-hp").text("");
+			$("#enemy-hp").text("");
+			enemySelect();
 		}
 	}
 
