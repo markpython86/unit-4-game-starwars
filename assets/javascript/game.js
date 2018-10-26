@@ -42,7 +42,8 @@ console.log("we are live!!!")
 						isDead: false,
 					}
 					]
-
+	var player;
+	var enemy;
 	playerOneSelected = false;
 	playerTwoSelected = false;
 	gameStart = false;
@@ -68,6 +69,7 @@ console.log("we are live!!!")
 			$("#player-total-hp").text(rey.healthPoints);
 			playerOneSelected = true;
 			rey.isPlayerOne = true;
+			player = rey;
 			enemySelect();
 			console.log("player one is " + playerOneSelected);
 			}
@@ -84,6 +86,7 @@ console.log("we are live!!!")
 				$("#player-total-hp").text(luke.healthPoints);
 				playerOneSelected = true;
 				luke.isPlayerOne = true;
+				player = luke;
 				console.log("player one is " + playerOneSelected);
 				enemySelect();
 			}
@@ -101,6 +104,7 @@ console.log("we are live!!!")
 				$("#player-total-hp").text(maul.healthPoints);
 				playerOneSelected = true;
 				maul.isPlayerOne = true;
+				player = maul;
 				console.log("player one is " + playerOneSelected);
 				enemySelect();
 			}
@@ -117,6 +121,7 @@ console.log("we are live!!!")
 				$("#player-total-hp").text(vader.healthPoints);
 				playerOneSelected = true;
 				vader.isPlayerOne = true;
+				player = vader;
 				console.log("player one is " + playerOneSelected);
 				enemySelect();
 			}
@@ -135,7 +140,9 @@ console.log("we are live!!!")
 			playerTwoSelected = true;
 			isPlayerTwo = true;
 			gameStart = true;
+			enemy = rey;
 			console.log("player two is " + playerTwoSelected);
+			startBattle();
 			
 			}
 		});	
@@ -151,8 +158,10 @@ console.log("we are live!!!")
 				playerTwoSelected = true;
 				isPlayerTwo = true;
 				gameStart = true;
+				enemy = luke;
 				console.log("gamestart is " + gameStart);
 				console.log("player two is " + playerTwoSelected);
+				startBattle();
 				
 			}
 		});	
@@ -168,7 +177,9 @@ console.log("we are live!!!")
 				playerTwoSelected = true;
 				isPlayerTwo = true;
 				gameStart = true;
+				enemy = maul;
 				console.log("player two is " + playerTwoSelected);
+				startBattle();
 				
 			}
 		});	
@@ -184,10 +195,33 @@ console.log("we are live!!!")
 				playerTwoSelected = true;
 				isPlayerTwo = true;
 				gameStart = true;
+				enemy = vader;
 				console.log("player two is " + playerTwoSelected);
+				startBattle();
 				
 			}
 		});	
+	}
+	function startBattle(){
+		$("#attackBtn").on("click", function() {
+			console.log("button pressed");
+			if (gameStart === true){
+				attack();  	
+				// console.log("enemy's HP is " + enemy.healthPoints);
+				if (enemy.healthPoints <= 0){
+				enemiesRemaining--;
+				console.log("enemies remaining is " + enemiesRemaining);
+				}
+				
+			}
+			
+		});		
+	}
+
+	function attack(){
+		enemy.healthPoints = enemy.healthPoints - player.attackPower;
+		$("#enemy-total-hp").text(enemy.healthPoints);
+		console.log("enemy HP is " + enemy.healthPoints);
 	}
 
 playerSelect();

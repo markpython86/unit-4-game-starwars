@@ -3,6 +3,7 @@ body{
 	/*background-size: cover;*/
 }
 
+
 .jumbotron{
 	padding: 0;
 	margin:0 auto;
@@ -71,8 +72,7 @@ div#enemy-fight-area {
 div.fightingArea img{
 	width: 740px;
 	max-width: 800px;
-	color: #ffe81f ;s
-	height: 360px;
+	color: #ffe81f ;
 	margin-bottom: 10px;
 }
 
