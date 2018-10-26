@@ -15,44 +15,37 @@
 	</div>
 	<div class="container">
 		<div id="firstSection" class="row">
-			<div class="col-md-3">
-				<a  class="card-link" value="">
-					<img class="char mx-auto d-block" src="assets/images/darth-maul.png">
-				</a>
-			</div>	
-			<div class="col-md-3">
-				<a  class="card-link"  value="">
-					<img class="char mx-auto d-block" src="assets/images/darth-vader.png">
-				</a>
-			</div>	
-			<div class="col-md-3">
-				<a  class="card-link"  value="">
-					<img class="char mx-auto d-block" src="assets/images/luke-skywalker.png">
-				</a>
-			</div>	
-			<div class="col-md-3">
-				<a  class="card-link" value="">
-					<img class="char mx-auto d-block" src="assets/images/rey.png">
-				</a>
+					<img id="maul" class="col-sm-3 char mx-auto d-block" src="assets/images/darth-maul.png">
+					<img id="vader" class="col-sm-3 char mx-auto d-block" src="assets/images/darth-vader.png">
+					<img id="luke" class="col-sm-3 char mx-auto d-block" src="assets/images/luke-skywalker.png">
+					<img id="rey" class="col-sm-3 char mx-auto d-block" src="assets/images/rey.png">
 			</div>
 		</div>
 		<div class="row">
-			<h6 class="font">Select Your Character</h6>
+			<h6 id="select-option">Select Your Character</h6>
 		</div>
 
-		<div class="row">
-			<img class="fightingArea mx-auto d-block" src="assets/images/fighting-area.jpg">
+		<div class="fightingArea">
+		<img class="mx-auto d-block" src="assets/images/fighting-area.jpg">
+			<div id="player-name"></div>
+			<div id="player-hp"></div> 
+			<div id="player-total-hp"></div>
+			<div id="enemy-name"></div>
+			<div id="enemy-hp"></div> 
+			<div id="enemy-total-hp"></div>
+			<div id="player-fight-area" class="col-md-6"></div>
+			<div id="enemy-fight-area" class="col-md-6"></div>
 		</div>
-		<button type="button" class="mx-auto d-block btn btn-outline-warning">Attack</button>
+		<button id="attackBtn" type="button" class="mx-auto d-block btn btn-outline-warning">Attack</button>
 
 
 
 	</div>
 
-<script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
 	<script src="assets/javascript/game.js"></script>
 
 
