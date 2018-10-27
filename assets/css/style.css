@@ -1,8 +1,145 @@
+
 body{
 	background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
 	/*background-size: cover;*/
+	height: 100%;
 }
 
+#start{
+	position: absolute;
+	height: 156%;
+	width: 100%;
+	background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+	z-index: 20;
+}
+
+#start button{
+	position: absolute;
+    top: 55%;
+    left: 89%;
+    width: 125px;
+
+}
+/*--------------------------------------------*/
+
+#skip{
+	z-index: 23;
+}
+#content p{
+  color: #ffe81f;
+}
+
+#content h2, #content h3 {
+  color: #ffe81f;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+/* Set the font, lean the board, position it */
+#board {
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+  transform: perspective(300px) rotateX(16deg);
+  transform-origin: 50% 100%;
+  text-align: justify;
+  position: absolute;
+  margin-left: -9em;
+  font-weight: bold;
+  overflow: hidden;
+  font-size: 440%;
+  height: 50em;
+  width: 18em;
+  bottom: 0;
+  left: 50%;
+  z-index: 21;
+}
+
+#board:after {
+  position: absolute;
+  content: ' ';
+  bottom: 60%;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+/* Set the scrolling animation and position it */
+#content {
+  animation: scroll 150s linear 16s;
+  position: absolute;
+  top: 100%;
+}
+
+#title, #subtitle {
+  text-align: center;
+}
+
+@keyframes scroll {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -170%;
+    }
+}
+
+
+
+.intro {
+    position: absolute;
+    top: 25%;
+    left: 24%;
+    animation: intro 8s ease-out 1s;
+    color: #4bd5ee;
+    font-weight: 400;
+    font-size: 300%;
+    opacity: 0;
+    font: 700 3em "News Cycle", sans-serif;
+    letter-spacing: .15em;
+    z-index: 21;
+}
+
+@keyframes intro {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#start img {    
+    position: absolute;
+    top: 24%;
+    left: 40%;
+    z-index: 21;
+    margin: auto;
+    animation: logoStart 9s ease-out 9s;
+    opacity: 0;
+}
+
+@keyframes logoStart {
+    0% {
+        width: 18em;        
+        transform: scale(2.75);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+        width: 18em;      
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.1);
+        width: 18em;        
+    }
+}
+/*----------------------------------------*/
 
 .jumbotron{
 	padding: 0;

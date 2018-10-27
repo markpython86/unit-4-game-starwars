@@ -1,5 +1,24 @@
+	// $(document).on("click", function() {
+	// 	var intro = new Audio('https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3');
+	// 	intro.play();
+	// 	// $("#start").css("display", "none");
+	// 	// intro.pause();
+	// });
+	// $('#skip').on("click", function() {
+	// 	$("#start").css("display", "none");
+	// 	intro.pause();
+	// });
+	// intro.pause();
 $(document).ready(function() {
-console.log("we are live!!!")
+	$('#skip').on("click", function() {
+		$("#start").css("display", "none");
+		// intro.pause();
+	});
+
+	
+
+
+	console.log("we are live!!!")
 	// an array of objects(players)
 	var players = 	[rey = {
 						name: "Rey",
