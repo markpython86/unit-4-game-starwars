@@ -5,8 +5,26 @@ body{
 	height: 100%;
 }
 
+.gameLose img{
+    position: absolute;
+    top: 52%;
+    left: 30%;
+    border: 4px solid yellow;
+    height: 262px;
+    z-index: 27;
+    }
+
+.gameWin img{
+    position: absolute;
+    top: 26%;
+    left: 30%;
+    border: 4px solid yellow;
+    height: 262px;
+    z-index: 27;
+}
+
 #start{
-	position: absolute;
+	position: fixed;
 	height: 156%;
 	width: 100%;
 	background-image: url(http://untroubled.org/backgrounds/space/stars.gif);

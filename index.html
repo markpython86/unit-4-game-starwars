@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div id="start">
-		<iframe src="https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.ogg" allow="autoplay" style="display:none" id="iframeAudio">
+		<iframe src="assets/audio/intro.mp3" allow="autoplay" style="display:none" id="iframeAudio" type="audio/mpeg">
 </iframe> 
 		<section class="intro">
 			A long time ago, in a galaxy far,<br> far away....
@@ -52,14 +52,16 @@
 	</div>
 	<div class="container">
 		<div id="firstSection" class="row">
-			<img id="maul" class="col-sm-3 char mx-auto d-block" src="assets/images/darth-maul.png">
-			<img id="vader" class="col-sm-3 char mx-auto d-block" src="assets/images/darth-vader.png">
-			<img id="luke" class="col-sm-3 char mx-auto d-block" src="assets/images/luke-skywalker.png">
-			<img id="rey" class="col-sm-3 char mx-auto d-block" src="assets/images/rey.png">
+			<img id='maul' class='col-sm-3 char mx-auto d-block' src='assets/images/darth-maul.png'>
+			<img id='vader' class='col-sm-3 char mx-auto d-block' src='assets/images/darth-vader.png'>
+			<img id='luke' class='col-sm-3 char mx-auto d-block' src='assets/images/luke-skywalker.png'>
+			<img id='rey' class='col-sm-3 char mx-auto d-block' src='assets/images/rey.png'>
 		</div>
 	</div>
 	<div class="row">
 		<h6 id="select-option">Select Your Character</h6>
+		<div id="fin-win" class="gameWin"></div>
+		<div id="fin-lose" class="gameLose"></div>
 	</div>
 
 	<div class="row mx-auto container backgrd fightingArea">

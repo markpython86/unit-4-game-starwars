@@ -12,6 +12,7 @@
 $(document).ready(function() {
 	$('#skip').on("click", function() {
 		$("#start").css("display", "none");
+		$("#iframeAudio").attr("src","");
 		// intro.pause();
 	});
 
@@ -61,6 +62,7 @@ $(document).ready(function() {
 	playerOneSelected = false;
 	playerTwoSelected = false;
 	gameStart = false;
+	var saber = new Audio ("assets/audio/player-select.mp3");
 	var enemyHealthPoints;
 	var enemycounterHitStrength;
 	var enemiesRemaining = players.length - 1;
@@ -76,6 +78,7 @@ $(document).ready(function() {
 		$("#rey").on("click", function() {
 			if (playerOneSelected === false){
 			console.log("rey is first player");
+			saber.play();
 			$("#rey").appendTo("#player-fight-area");
 			$("#player-name").text(rey.name);
 			$("#rey").addClass('flip');
@@ -92,6 +95,7 @@ $(document).ready(function() {
 		$("#luke").on("click", function() {
 			if (playerOneSelected === false){
 				console.log("luke is first player");
+				saber.play();
 				$("#luke").appendTo("#player-fight-area");
 				$("#luke").addClass('flip');
 				$("#player-name").text(luke.name);
@@ -108,6 +112,7 @@ $(document).ready(function() {
 		$("#maul").on("click", function() {
 			if (playerOneSelected === false){
 				console.log("maul is first player");
+				saber.play();
 				$("#maul").appendTo("#player-fight-area");
 				$("#player-name").text(maul.name);
 				$("#player-hp").text("Health Points");
@@ -124,6 +129,7 @@ $(document).ready(function() {
 		$("#vader").on("click", function() {
 			if (playerOneSelected === false){
 				console.log("vader is first player");
+				saber.play();
 				$("#vader").appendTo("#player-fight-area");
 				$("#vader").addClass('flip');
 				$("#player-name").text(vader.name);
@@ -142,6 +148,7 @@ $(document).ready(function() {
 		$("#rey").on("click", function() {
 			if (playerTwoSelected === false && rey.isPlayerOne === false){
 			console.log("rey is second player");
+			saber.play();
 			$("#rey").appendTo("#enemy-fight-area");
 			$("#enemy-name").text(rey.name);
 			$("#enemy-hp").text("Health Points");
@@ -158,6 +165,7 @@ $(document).ready(function() {
 		$("#luke").on("click", function() {
 			if (playerTwoSelected === false && luke.isPlayerOne === false){
 				console.log("luke is second player");
+				saber.play();
 				$("#luke").appendTo("#enemy-fight-area");
 				$("#enemy-name").text(luke.name);
 				$("#enemy-hp").text("Health Points");
@@ -175,7 +183,7 @@ $(document).ready(function() {
 		$("#maul").on("click", function() {
 			if (playerTwoSelected === false && maul.isPlayerOne === false){
 				console.log("maul is second player");
-				
+				saber.play();
 				$("#maul").appendTo("#enemy-fight-area");
 				$("#enemy-name").text(maul.name);
 				$("#maul").addClass('flip');
@@ -193,7 +201,7 @@ $(document).ready(function() {
 		$("#vader").on("click", function() {
 			if (playerTwoSelected === false && vader.isPlayerOne === false){
 				console.log("vader is second player");
-				
+				saber.play();
 				$("#vader").appendTo("#enemy-fight-area");
 				$("#enemy-name").text(vader.name);
 				$("#enemy-hp").text("Health Points");
@@ -271,11 +279,10 @@ $(document).ready(function() {
 
 	function gameWin() {
 		console.log("you win");
-		alert("you win!");
-		//player win screen
-		//player win music
 		$("#enemy-total-hp").text(0);
-		gameStart = false;	
+		gameStart = false;
+		setTimeout(function(){$("#fin-win").html("<img src='assets/images/game-win.gif'>")}, 1000*3);
+		setTimeout(gameReset, 1000 * 8);
 	}
 
 
@@ -286,6 +293,8 @@ $(document).ready(function() {
 		//player lose music
 		$("#player-total-hp").text(0);
 		gameStart = false;
+		setTimeout(function(){$("#fin-lose").html("<img src='assets/images/game-lose.gif'>")}, 1000*3);		
+		setTimeout(gameReset, 1000 * 8);
 	}
 
 	function gainMorePower(){
@@ -293,6 +302,66 @@ $(document).ready(function() {
 		console.log("player hit strength is " + player.hitStrength);
 	}	
 
+//game reset
+	function gameReset(){
+			[rey = {
+						name: "Rey",
+						healthPoints: 1080,
+						basicHitStrength: 15,
+						hitStrength: 12,
+						counterHitStrength: 12,
+						isPlayerOne: false,
+						isPlayerTwo: false,
+					}, 
+					luke = {
+						name: "Luke Skywalker",
+						healthPoints: 150,
+						basicHitStrength: 5,
+						hitStrength: 5,
+						counterHitStrength: 10,
+						isPlayerOne: false,
+						isPlayerTwo: false,
+					},
+					maul = {
+						name: "Darth Maul",
+						healthPoints: 160,
+						basicHitStrength: 4,	
+						hitStrength: 4,
+						counterHitStrength: 15,
+						isPlayerOne: false,
+						isPlayerTwo: false,
+					},
+					vader = {
+						name: "Darth Vader",
+						healthPoints: 180,
+						basicHitStrength: 2,
+						hitStrength: 2,
+						counterHitStrength: 25,
+						isPlayerOne: false,
+						isPlayerTwo: false,
+					}]		
+			playerOneSelected = false;
+			playerTwoSelected = false;
+			enemiesRemaining = players.length - 1;
+			$("#select-option").text("Select your Character")
+			$("#fin-win",).html("");
+			$("#fin-lose").html("");
+			$("#enemy-name").text("");
+			$("#enemy-hp").text("");
+			$("#player-name").text("");
+			$("#player-hp").text("");
+			$("#player-total-hp").text("");
+			$("#enemy-total-hp").text("");
+			$("#player-fight-area").html("");
+			$("#enemy-fight-area").html("");
+			$("#firstSection").html("");
+			$("<img id='maul' class='col-sm-3 char mx-auto d-block' src='assets/images/darth-maul.png'>").appendTo("#firstSection");
+			$("<img id='vader' class='col-sm-3 char mx-auto d-block' src='assets/images/darth-vader.png'>").appendTo("#firstSection");
+			$("<img id='luke' class='col-sm-3 char mx-auto d-block' src='assets/images/luke-skywalker.png'>").appendTo("#firstSection");
+			$("<img id='rey' class='col-sm-3 char mx-auto d-block' src='assets/images/rey.png'>").appendTo("#firstSection");
+			console.log("game reset seccessful");
+			playerSelect();
+	}
 
 
 });
