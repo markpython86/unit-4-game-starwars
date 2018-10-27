@@ -138,7 +138,7 @@ $(document).ready(function() {
 		});	
 	}
  	function enemySelect(){
-		//HTML - display "select your enemy"
+ 		$("#select-option").text("Select your Enemy");
 		$("#rey").on("click", function() {
 			if (playerTwoSelected === false && rey.isPlayerOne === false){
 			console.log("rey is second player");
@@ -150,6 +150,7 @@ $(document).ready(function() {
 			isPlayerTwo = true;
 			gameStart = true;
 			enemy = rey;
+			$("#select-option").text("Let the Battle Begin!");
 			console.log("player two is " + playerTwoSelected)			
 			}
 		});	
@@ -165,6 +166,7 @@ $(document).ready(function() {
 				isPlayerTwo = true;
 				gameStart = true;
 				enemy = luke;
+				$("#select-option").text("Let the Battle Begin!");
 				console.log("gamestart is " + gameStart);
 				console.log("player two is " + playerTwoSelected);				
 			}
@@ -183,6 +185,7 @@ $(document).ready(function() {
 				isPlayerTwo = true;
 				gameStart = true;
 				enemy = maul;
+				$("#select-option").text("Let the Battle Begin!");
 				console.log("player two is " + playerTwoSelected);				
 			}
 		});	
@@ -199,6 +202,7 @@ $(document).ready(function() {
 				isPlayerTwo = true;
 				gameStart = true;
 				enemy = vader;
+				$("#select-option").text("Let the Battle Begin!");
 				console.log("player two is " + playerTwoSelected);				
 			}
 		});	
@@ -257,7 +261,8 @@ $(document).ready(function() {
 			$("#enemy-name").text("");
 			$("#enemy-total-hp").text("");
 			$('#enemy-hp').text("");
-			playerTwoSelected = false;
+			setTimeout(function(){playerTwoSelected = false}, 2000);
+			setTimeout(function(){$("#select-option").text("Select your Enemy")}, 500);
 			console.log("player two selected is " + playerTwoSelected);
 		}	
 	}
@@ -285,7 +290,7 @@ $(document).ready(function() {
 
 	function gainMorePower(){
 		player.hitStrength = player.hitStrength + player.basicHitStrength;
-			console.log("player hit strength is " + player.hitStrength);
+		console.log("player hit strength is " + player.hitStrength);
 	}	
 
 
