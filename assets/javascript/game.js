@@ -1,19 +1,8 @@
-	// $(document).on("click", function() {
-	// 	var intro = new Audio('https://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.mp3');
-	// 	intro.play();
-	// 	// $("#start").css("display", "none");
-	// 	// intro.pause();
-	// });
-	// $('#skip').on("click", function() {
-	// 	$("#start").css("display", "none");
-	// 	intro.pause();
-	// });
-	// intro.pause();
+
 $(document).ready(function() {
 	$('#skip').on("click", function() {
 		$("#start").css("display", "none");
 		$("#iframeAudio").attr("src","");
-		// intro.pause();
 	});
 
 	
