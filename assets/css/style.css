@@ -1,6 +1,6 @@
 
 body{
-	background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+	background-image: url(../images/space_background.gif);
 	/*background-size: cover;*/
 	height: 100%;
 }
@@ -27,7 +27,7 @@ body{
 	position: fixed;
 	height: 156%;
 	width: 100%;
-	background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+	background-image: url(../images/space_background.gif);
 	background-repeat: repeat;
 	z-index: 20;
 }
