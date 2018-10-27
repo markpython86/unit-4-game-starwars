@@ -28,6 +28,7 @@ body{
 	height: 156%;
 	width: 100%;
 	background-image: url(http://untroubled.org/backgrounds/space/stars.gif);
+	background-repeat: repeat;
 	z-index: 20;
 }
 
